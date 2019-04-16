@@ -10668,11 +10668,30 @@ a.text-dark:focus {
 
 strong {
   display: block;
+  font-size: 2em;
 }
 
 .vote,
 .answer {
-  color: #07c02f;
-  border: 2px solid #01aa0f;
+  width: 60px;
+  height: 60px;
+}
+
+.status.unanswered {
+  border: none;
+}
+
+.status.answered {
+  border: 1px solid green;
+  color: green;
+}
+
+.status.answered-accepted {
+  background-color: #00b12c;
+  color: white;
+}
+
+.status .view {
+  margin-top: 10px;
 }
 
