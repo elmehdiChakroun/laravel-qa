@@ -49,7 +49,9 @@ class QuestionController extends Controller
      */
     public function show(Question $question)
     {
-        //
+        $question->increment('views');
+        $question = Question::whereSlug($question->slug)->first();
+        return view('questions.show', compact('question', $question));
     }
 
     /**
@@ -84,6 +86,7 @@ class QuestionController extends Controller
      */
     public function destroy(Question $question)
     {
-        //
+        $question->delete();
+        return redirect('questions')->with('success', 'Questions has been deleted');
     }
 }
